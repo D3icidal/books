@@ -17,7 +17,7 @@ class Api::BooksController < ApplicationController
   def create
     @book = Book.new(
       title: params[:title],
-      author: params[:author]
+      author_id: params[:author_id]
       )
     @book.save
     render json: @book
@@ -28,7 +28,7 @@ class Api::BooksController < ApplicationController
     @book = Book.find_by(id: params[:id])
     @book.update(
       title: params[:title] || book.title,
-      author: params[:author] || book.author
+      author_id: params[:author_id] || book.author_id
     )
     render json: @book
   end
