@@ -15,5 +15,12 @@ Rails.application.routes.draw do
     post '/authors' => 'authors#create'
     patch '/authors/:id' => 'authors#update'
     delete '/authors/:id' => 'authors#destroy'
+
+    #CRUD Users
+    get '/users' => 'users#index'
+    get '/users/:id' => 'users#show'
+    post '/users' => 'users#create'
+    patch '/users/:id' => 'users#update'
+    delete '/users/:id' => 'users#destroy'
   end
 end
